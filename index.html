@@ -25,5 +25,26 @@
         <p>Lorem ipsum</p>
         <p>Creating parallax effect</p>
     </section>
+
+    <script>
+        let ParallaxCollection = document.getElementsByClassName("parallax-layer")
+        window.onscroll = (e) => {
+            for (let Layer of ParallaxCollection)
+            {
+                if (Layer.classList.contains("layer-1")){
+                    Layer.style.transform = "translateY(-" + window.scrollY * .4 + "px) translateX(" + window.scrollY * .2 + "px)"
+                }
+                if (Layer.classList.contains("layer-2")){
+                    Layer.style.transform = "translateY(-" + window.scrollY * .6 + "px)"
+                }
+                if (Layer.classList.contains("layer-3")){
+                    Layer.style.transform = "translateY(-" + window.scrollY * .96 + "px)"
+                }
+                if (Layer.classList.contains("layer-4")){
+                    Layer.style.transform = "translateY(-" + window.scrollY * .8 + "px) translateX(-" + window.scrollY * .4 + "px)"
+                }
+            }
+        }
+    </script>
 </body>
 </html>
